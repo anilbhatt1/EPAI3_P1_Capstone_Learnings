@@ -1,0 +1,23 @@
+<h1>Hello World !</h1>
+
+<p>This is my first web page ! Regards, Anil Bhatt</p>
+<p> First Name : {{first_name|upper}}</p>
+<p> without using safe : {{message}}</p>
+<p>with safe :{{ message | safe }}</p>
+<p>Using striptag:{{ message | striptags }}</p>
+
+<h3> Favorite places that I visited...</h3>
+
+{% for place in favorite_places %}
+    {% if place == 'Florida' %}
+        {{ place + '<strong> -Great memories</strong>' | safe }}<br/>
+    {% else %}
+        {{ place }}<br/>
+    {% endif %}
+{% endfor %}
+
+<br/>
+
+{{ 'Last Visited Place: '+ last_visited}}<br/>
+<br/>
+{{ 'Place displayed in reverse order: '+ last_visited | reverse}}<br/>
